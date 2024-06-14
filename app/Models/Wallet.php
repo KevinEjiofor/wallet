@@ -1,7 +1,6 @@
 <?php
+
 namespace App\Models;
-
-
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,8 +9,10 @@ class Wallet extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'wallet_type_id', 'balance'];
+    // Define fillable attributes
+    protected $fillable = ['user_id', 'type', 'balance', 'account_number', 'pin'];
 
+    // Define relationships
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -19,6 +20,6 @@ class Wallet extends Model
 
     public function walletType()
     {
-        return $this->belongsTo(WalletType::class);
+        return $this->belongsTo(WalletType::class, 'type', 'name');
     }
 }
