@@ -1,3 +1,86 @@
+**Project Name: Multi-Wallet System**
+
+**Description:**
+The Multi-Wallet System is designed to allow users to manage multiple wallets of different types, facilitating financial transactions between them. Each wallet type comes with its own set of attributes, including name, minimum balance, and monthly interest rate.
+
+**Database Design:**
+The database architecture consists of the following tables:
+
+1. **Users:**
+   - Stores user information such as name and email.
+
+2. **Wallets:**
+   - Records wallet details like user ownership, type, and balance.
+
+3. **WalletTypes:**
+   - Contains details about wallet types including name, minimum balance, and monthly interest rate.
+
+**Endpoints:**
+
+1. **Get All Users**
+   - Endpoint: GET /api/users
+   - Description: Retrieves a list of all users in the system.
+   - Response: JSON array containing user details.
+
+2. **Get All Wallets**
+   - Endpoint: GET /api/wallets
+   - Description: Retrieves a list of all wallets in the system.
+   - Response: JSON array containing wallet details.
+
+3. **Get Wallet Details**
+   - Endpoint: GET /api/wallets/{wallet_id}
+   - Description: Retrieves details of a specific wallet including its owner, type, and available balance.
+   - Response: JSON object containing wallet details, user details, and wallet type details.
+
+4. **Send Money**
+   - Endpoint: POST /api/wallets/transfer
+   - Description: Transfers money from one wallet to another.
+   - Request Body: JSON object containing from_wallet_id, to_wallet_id, and amount.
+   - Response: JSON object with a success message if the transfer is successful, or an error message if there is insufficient balance or any other error.
+
+**Setup Instructions:**
+1. push code to the repository.
+2. Install dependencies using Composer.
+3. Configure the database connection in the .env file.
+4. Run migrations to set up the database schema.
+5. Optionally, seed the database with sample data.
+6. Start the development server.
+
+**Testing Endpoints:**
+1. Utilize tools like Postman to send requests to the designated endpoints.
+2. Include necessary headers and request bodies as specified in the documentation.
+3. Verify responses to ensure the system operates as intended.
+
+**Contributing:**
+- Fork the repository, implement changes, and submit a pull request adhering to coding standards and clear commit messages.
+
+**License:**
+This project is licensed under the MIT License.
+
+**Contact:**
+For inquiries, contact [email@example.com].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
